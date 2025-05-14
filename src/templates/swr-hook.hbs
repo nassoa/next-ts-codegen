@@ -1,0 +1,31 @@
+import useSWR from 'swr';
+import { {{pascalCase name}} } from './{{name}}.types';
+
+const API_BASE_URL = '{{baseUrl}}/{{kebabCase name}}';
+
+export function use{{pascalCase name}}List() {
+  return useSWR<{{pascalCase name}}[]>(API_BASE_URL);
+}
+
+{{#if enableGetById}}
+export function use{{pascalCase name}}ById(id: string) {
+  return useSWR<{{pascalCase name}}>(`${API_BASE_URL}/${id}`);
+}
+{{/if}}
+
+{{#if enableMutations}}
+export function useCreate{{pascalCase name}}() {
+  const { mutate } = useSWR(API_BASE_URL);
+  
+  return async (data: Omit<{{pascalCase name}}, 'id'>) => {
+    const response = await fetch(API_BASE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    
+    await mutate();
+    return response.json();
+  };
+}
+{{/if}}

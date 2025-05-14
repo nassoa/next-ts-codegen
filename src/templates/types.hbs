@@ -1,0 +1,20 @@
+{{#if generateZod}}
+import { z } from 'zod';
+{{/if}}
+
+export interface {{pascalCase name}} {
+  {{#each properties}}
+  {{@key}}{{#unless required}}?{{/unless}}: {{> type this}};
+  {{/each}}
+}
+
+{{#if generateZod}}
+export const {{camelCase name}}Schema = z.object({
+  {{#each properties}}
+  {{@key}}: {{> zodType this}},
+  {{/each}}
+});
+
+export type {{pascalCase name}}Input = z.input<typeof {{camelCase name}}Schema>;
+export type {{pascalCase name}}Output = z.output<typeof {{camelCase name}}Schema>;
+{{/if}}

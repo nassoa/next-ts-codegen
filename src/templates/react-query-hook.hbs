@@ -1,0 +1,47 @@
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { {{pascalCase name}} } from './{{name}}.types';
+
+const API_BASE_URL = '{{baseUrl}}/{{kebabCase name}}';
+
+// Queries
+export function use{{pascalCase name}}List() {
+  return useQuery<{{pascalCase name}}[]>(['{{camelCase name}}List'], async () => {
+    const response = await fetch(API_BASE_URL);
+    return response.json();
+  });
+}
+
+{{#if enableGetById}}
+export function use{{pascalCase name}}ById(id: string) {
+  return useQuery<{{pascalCase name}}>(
+    ['{{camelCase name}}', id],
+    async () => {
+      const response = await fetch(`${API_BASE_URL}/${id}`);
+      return response.json();
+    }
+  );
+}
+{{/if}}
+
+// Mutations
+{{#if enableMutations}}
+export function useCreate{{pascalCase name}}() {
+  const queryClient = useQueryClient();
+  
+  return useMutation(
+    async (data: Omit<{{pascalCase name}}, 'id'>) => {
+      const response = await fetch(API_BASE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      return response.json();
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(['{{camelCase name}}List']);
+      },
+    }
+  );
+}
+{{/if}}
