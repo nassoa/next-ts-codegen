@@ -1,0 +1,50 @@
+# Fichiers de développement
+.git
+.github
+.vscode
+coverage
+__tests__
+
+# Fichiers de build
+node_modules
+*.log
+*.tsbuildinfo
+
+# Fichiers de configuration
+tsconfig.json
+tsconfig.tsbuildinfo
+jest.config.js
+.eslintrc.js
+.prettierrc
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de l'éditeur
+.idea
+*.sublime-*
+
+# Fichiers temporaires
+*.tmp
+*.tmp.*
+
+# Fichiers de débogage
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de couverture
+yarn.lock
+package-lock.json
+
+# Fichiers de documentation temporaires
+*.mdx
+*.md~

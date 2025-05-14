@@ -2,6 +2,21 @@
   "name": "next-ts-codegen",
   "version": "0.1.0",
   "description": "Generate TypeScript types and React hooks from various data sources",
+  "keywords": ["typescript", "codegen", "nextjs", "react", "types", "hooks", "api"],
+  "license": "MIT",
+  "author": {
+    "name": "manitriniaina",
+    "email": "votre@email.com",
+    "url": "https://github.com/nassoa"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nassoa/next-ts-codegen.git"
+  },
+  "homepage": "https://github.com/nassoa/next-ts-codegen#readme",
+  "bugs": {
+    "url": "https://github.com/nassoa/next-ts-codegen/issues"
+  },
   "main": "dist/index.js",
   "exports": {
     ".": "./dist/index.js",
@@ -29,16 +44,15 @@
     "generate:source": "node dist/index.js generate:source",
     "check": "npm run lint && npm run typecheck && npm run build && npm test"
   },
-  "keywords": [
-    "typescript",
-    "react",
-    "nextjs",
-    "codegen",
-    "api",
-    "hooks"
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
   ],
-  "author": "manitriniaina",
-  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@tanstack/react-query": "^5.0.0",
     "commander": "^13.1.0",
