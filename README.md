@@ -1,18 +1,16 @@
-<div align="center">
-  <h1>Next.js TypeScript Code Generator</h1>
-  
-  [![npm](https://img.shields.io/npm/v/next-ts-codegen.svg)](https://www.npmjs.com/package/next-ts-codegen)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nassoa/next-ts-codegen/test.yml)](https://github.com/nassoa/next-ts-codegen/actions)
-  [![npm](https://img.shields.io/npm/dw/next-ts-codegen)](https://www.npmjs.com/package/next-ts-codegen)
-  [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-</div>
+# Next.js TypeScript Code Generator
 
----
+[![npm version](https://img.shields.io/npm/v/next-ts-codegen.svg?style=flat-square)](https://www.npmjs.com/package/next-ts-codegen)
+[![npm downloads](https://img.shields.io/npm/dm/next-ts-codegen.svg?style=flat-square)](https://www.npmjs.com/package/next-ts-codegen)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nassoa/next-ts-codegen/test.yml?branch=main&style=flat-square)](https://github.com/nassoa/next-ts-codegen/actions)
+[![codecov](https://img.shields.io/codecov/c/github/nassoa/next-ts-codegen?style=flat-square)](https://codecov.io/gh/nassoa/next-ts-codegen)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 A powerful code generation tool for Next.js applications that automatically generates TypeScript types and React hooks from your data sources. Supports both SWR and React Query for data fetching.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
 - 🚀 Generate TypeScript types from JSON files or API responses
 - ⚡ Create React Query or SWR hooks with a single command
@@ -24,19 +22,19 @@ A powerful code generation tool for Next.js applications that automatically gene
 ## 📦 Installation
 
 ```bash
-# En tant que dépendance de développement
+# As a development dependency
 npm install --save-dev next-ts-codegen
 # ou
 yarn add -D next-ts-codegen
 
-# En global
+# Globally
 npm install -g next-ts-codegen
 ```
 
-## 🔧 Configuration requise
+## 🔧 Requirements
 
-- Node.js 20 ou supérieur
-- npm 9 ou supérieur ou yarn
+- Node.js 20 or higher
+- npm 9 or higher or yarn
 
 Install the package as a dev dependency:
 
@@ -46,7 +44,7 @@ npm install --save-dev next-ts-codegen
 yarn add -D next-ts-codegen
 ```
 
-## 🚀 Démarrage rapide
+## 🚀 Quick Start
 
 ### Option 1: Using CLI (No config needed)
 
@@ -90,7 +88,7 @@ module.exports = {
   generateSwrHooks: false,    // Generate SWR hooks
 };
 
-## ⌨️ Commandes CLI
+## ⌨️ CLI Commands
 
 ### Generate from Source
 
@@ -120,7 +118,7 @@ npx next-ts-codegen generate:source https://api.example.com/users
 npx next-ts-codegen generate:schema <schema-file>
 ```
 
-## 📚 Exemples
+## 📚 Examples
 
 ### 1. Basic JSON File
 
@@ -144,7 +142,7 @@ npx next-ts-codegen generate:source data.json --name User
 npx next-ts-codegen generate:source https://jsonplaceholder.typicode.com/todos/1 --name Todo
 ```
 
-## 🔍 Utilisation des types générés
+## 🔍 Using Generated Types
 
 After generating types, you can import and use them in your components:
 
@@ -166,7 +164,7 @@ export function UserProfile({ user }: UserProfileProps) {
 }
 ```
 
-### 🔄 Avec les hooks React Query
+### 🔄 With React Query Hooks
 
 If you generated React Query hooks:
 
@@ -193,9 +191,9 @@ export function UsersList() {
 }
 ```
 
-## 🔧 Configuration avancée
+## 🔧 Advanced Configuration
 
-### Fichier de configuration
+### Configuration File
 
 `next-ts-codegen.config.js`:
 ```javascript
@@ -304,23 +302,23 @@ npm test
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 🤝 Contribuer
+## 🤝 Contributing
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## 📄 License
 
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📝 Changelog
 
-Consultez le [CHANGELOG.md](CHANGELOG.md) pour voir l'historique des changements.
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
 
-## 🔗 Liens utiles
+## 🔗 Useful Links
 
-- [Documentation complète](https://github.com/nassoa/next-ts-codegen#readme)
-- [Signaler un bug](https://github.com/nassoa/next-ts-codegen/issues)
-- [Contribuer](https://github.com/nassoa/next-ts-codegen/pulls)
+- [Full Documentation](https://github.com/nassoa/next-ts-codegen#readme)
+- [Report a Bug](https://github.com/nassoa/next-ts-codegen/issues)
+- [Contribute](https://github.com/nassoa/next-ts-codegen/pulls)
 
 MIT © Nasoavina
 
