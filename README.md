@@ -1,16 +1,8 @@
 # Next.js TypeScript Code Generator
 
-[![npm version](https://img.shields.io/npm/v/next-ts-codegen.svg?style=flat-square)](https://www.npmjs.com/package/next-ts-codegen)
-[![npm downloads](https://img.shields.io/npm/dm/next-ts-codegen.svg?style=flat-square)](https://www.npmjs.com/package/next-ts-codegen)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nassoa/next-ts-codegen/test.yml?branch=main&style=flat-square)](https://github.com/nassoa/next-ts-codegen/actions)
-[![codecov](https://img.shields.io/codecov/c/github/nassoa/next-ts-codegen?style=flat-square)](https://codecov.io/gh/nassoa/next-ts-codegen)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
 A powerful code generation tool for Next.js applications that automatically generates TypeScript types and React hooks from your data sources. Supports both SWR and React Query for data fetching.
 
-## ✨ Features
+## Features
 
 - Generate TypeScript types from JSON files or API responses
 - Create React Query or SWR hooks with a single command
