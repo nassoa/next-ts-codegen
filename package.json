@@ -1,8 +1,16 @@
 {
   "name": "next-ts-codegen",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Generate TypeScript types and React hooks from various data sources",
-  "keywords": ["typescript", "codegen", "nextjs", "react", "types", "hooks", "api"],
+  "keywords": [
+    "typescript",
+    "codegen",
+    "nextjs",
+    "react",
+    "types",
+    "hooks",
+    "api"
+  ],
   "license": "MIT",
   "author": {
     "name": "manitriniaina",
