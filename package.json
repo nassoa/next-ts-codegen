@@ -1,6 +1,6 @@
 {
   "name": "next-ts-codegen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate TypeScript types and React hooks from various data sources",
   "keywords": [
     "typescript",
