@@ -10,7 +10,7 @@
   "bin": {
     "next-ts-codegen": "./bin/next-ts-codegen.js"
   },
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
@@ -50,7 +50,7 @@
     "@types/handlebars": "^4.0.40",
     "@types/inquirer": "^9.0.8",
     "@types/jest": "^29.5.14",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.17.47",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
     "eslint": "^9.26.0",
