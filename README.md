@@ -63,6 +63,7 @@ module.exports = {
   generateSwrHooks: false,    // Generate SWR hooks
   generateTanStackQueryHooks: true,  // Generate TanStack Query hooks
 };
+```
 
 ## CLI Commands
 
