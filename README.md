@@ -12,14 +12,14 @@ A powerful code generation tool for Next.js applications that automatically gene
 
 ## ✨ Features
 
-- 🚀 Generate TypeScript types from JSON files or API responses
-- ⚡ Create React Query or SWR hooks with a single command
-- 🔄 Support for CRUD operations (Create, Read, Update, Delete)
-- 🛠️ Configurable output directories and file structures
-- 🔄 Automatic schema validation with Zod (optional)
-- 📦 Works seamlessly with Next.js and TypeScript
+- Generate TypeScript types from JSON files or API responses
+- Create React Query or SWR hooks with a single command
+- Support for CRUD operations (Create, Read, Update, Delete)
+- Configurable output directories and file structures
+- Automatic schema validation with Zod (optional)
+- Works seamlessly with Next.js and TypeScript
 
-## 📦 Installation
+## Installation
 
 ```bash
 # As a development dependency
@@ -31,7 +31,7 @@ yarn add -D next-ts-codegen
 npm install -g next-ts-codegen
 ```
 
-## 🔧 Requirements
+## Requirements
 
 - Node.js 20 or higher
 - npm 9 or higher or yarn
@@ -44,7 +44,7 @@ npm install --save-dev next-ts-codegen
 yarn add -D next-ts-codegen
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Using CLI (No config needed)
 
@@ -88,7 +88,7 @@ module.exports = {
   generateSwrHooks: false,    // Generate SWR hooks
 };
 
-## ⌨️ CLI Commands
+## CLI Commands
 
 ### Generate from Source
 
@@ -118,7 +118,7 @@ npx next-ts-codegen generate:source https://api.example.com/users
 npx next-ts-codegen generate:schema <schema-file>
 ```
 
-## 📚 Examples
+## Examples
 
 ### 1. Basic JSON File
 
@@ -142,7 +142,7 @@ npx next-ts-codegen generate:source data.json --name User
 npx next-ts-codegen generate:source https://jsonplaceholder.typicode.com/todos/1 --name Todo
 ```
 
-## 🔍 Using Generated Types
+## Using Generated Types
 
 After generating types, you can import and use them in your components:
 
@@ -164,7 +164,7 @@ export function UserProfile({ user }: UserProfileProps) {
 }
 ```
 
-### 🔄 With React Query Hooks
+### With React Query Hooks
 
 If you generated React Query hooks:
 
@@ -191,7 +191,7 @@ export function UsersList() {
 }
 ```
 
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ### Configuration File
 
@@ -302,19 +302,19 @@ npm test
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📝 Changelog
+## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
 
-## 🔗 Useful Links
+## Useful Links
 
 - [Full Documentation](https://github.com/nassoa/next-ts-codegen#readme)
 - [Report a Bug](https://github.com/nassoa/next-ts-codegen/issues)
