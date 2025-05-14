@@ -1,34 +1,17 @@
 # Next.js TypeScript Code Generator
 
-A powerful code generation tool for Next.js applications that automatically generates TypeScript types and React hooks from your data sources. Supports both SWR and React Query for data fetching.
+A powerful code generation tool for Next.js applications that automatically generates TypeScript types and React hooks from your data sources. Supports both SWR and TanStack Query for data fetching.
 
 ## Features
 
 - Generate TypeScript types from JSON files or API responses
-- Create React Query or SWR hooks with a single command
+- Create TanStack Query or SWR hooks with a single command
 - Support for CRUD operations (Create, Read, Update, Delete)
 - Configurable output directories and file structures
 - Automatic schema validation with Zod (optional)
 - Works seamlessly with Next.js and TypeScript
 
 ## Installation
-
-```bash
-# As a development dependency
-npm install --save-dev next-ts-codegen
-# ou
-yarn add -D next-ts-codegen
-
-# Globally
-npm install -g next-ts-codegen
-```
-
-## Requirements
-
-- Node.js 20 or higher
-- npm 9 or higher or yarn
-
-Install the package as a dev dependency:
 
 ```bash
 npm install --save-dev next-ts-codegen
@@ -78,6 +61,7 @@ module.exports = {
   // Generation options
   generateZodSchemas: false,  // Enable to generate Zod schemas
   generateSwrHooks: false,    // Generate SWR hooks
+  generateTanStackQueryHooks: true,  // Generate TanStack Query hooks
 };
 
 ## CLI Commands
@@ -156,29 +140,28 @@ export function UserProfile({ user }: UserProfileProps) {
 }
 ```
 
-### With React Query Hooks
+### With TanStack Query Hooks
 
-If you generated React Query hooks:
+If you generated TanStack Query hooks:
 
 ```typescript
 'use client';
 
-import { useGetUsers } from '@/generated/hooks/useUsers.hooks';
+import { useQuery } from '@tanstack/react-query';
+import { useGetTodo } from './generated/hooks';
 
-export function UsersList() {
-  const { data: users, isLoading, error } = useGetUsers();
+export function TodoItem({ id }) {
+  // Using the generated TanStack Query hook
+  const { data: todo, isLoading, error } = useGetTodo({ id });
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div>Error loading todo</div>;
 
   return (
-    <ul>
-      {users?.map(user => (
-        <li key={user.id}>
-          {user.name} - {user.email}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h2>{todo.title}</h2>
+      <p>Completed: {todo.completed ? '✅' : '❌'}</p>
+    </div>
   );
 }
 ```
@@ -189,7 +172,7 @@ export function UsersList() {
 
 `next-ts-codegen.config.js`:
 ```javascript
-  generateReactQueryHooks: true,  // Generate React Query hooks
+  generateTanStackQueryHooks: true,  // Generate TanStack Query hooks
   hookPrefix: 'use',          // Prefix for generated hooks
   baseUrl: '/api',           // Base URL for API calls
 };
@@ -276,45 +259,15 @@ function UserList() {
 }
 ```
 
-## Development
-
-### Building the Package
-
-```bash
-npm run build
-```
-
-### Running Tests
-
-```bash
-npm test
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
-
-## Useful Links
-
-- [Full Documentation](https://github.com/nassoa/next-ts-codegen#readme)
-- [Report a Bug](https://github.com/nassoa/next-ts-codegen/issues)
-- [Contribute](https://github.com/nassoa/next-ts-codegen/pulls)
-
-MIT © Nasoavina
-
-## Acknowledgments
+<!-- ## Acknowledgments
 
 - Inspired by various code generation tools in the TypeScript ecosystem
-- Built with ❤️ for the Next.js community
+- Built with ❤️ for the Next.js community -->
