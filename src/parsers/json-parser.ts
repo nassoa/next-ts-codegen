@@ -1,7 +1,6 @@
-import fs from 'fs/promises';
-import path from 'path';
-import { readFile } from 'fs/promises';
-import { get } from 'https';
+import { promises as fs } from 'fs';
+import * as path from 'path';
+import { get, RequestOptions } from 'https';
 import { URL } from 'url';
 
 export interface ParserOptions {
@@ -16,11 +15,11 @@ export interface ParsedData {
 
 async function fetchUrl(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
-    get(url, (res) => {
+    get(url, (res: any) => {
       let data = '';
-      res.on('data', (chunk) => data += chunk);
+      res.on('data', (chunk: string) => data += chunk);
       res.on('end', () => resolve(data));
-    }).on('error', reject);
+    }).on('error', (err: Error) => reject(err));
   });
 }
 
@@ -38,7 +37,7 @@ export async function parseJson(filePath: string, options: ParserOptions & { nam
       jsonData = JSON.parse(response);
     } else {
       // Lire le fichier local
-      const fileContent = await readFile(filePath, 'utf-8');
+      const fileContent = await fs.readFile(filePath, 'utf-8');
       jsonData = JSON.parse(fileContent);
     }
     

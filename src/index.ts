@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { run } from './cli';
+const { run } = require('./cli');
 
-run().catch((error) => {
+run().catch((error: Error) => {
   console.error('Unhandled error:', error);
   process.exit(1);
 });

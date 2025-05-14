@@ -10,7 +10,7 @@
   "bin": {
     "next-ts-codegen": "./bin/next-ts-codegen.js"
   },
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
@@ -37,7 +37,6 @@
   "license": "MIT",
   "dependencies": {
     "@tanstack/react-query": "^5.0.0",
-    "chalk": "^5.4.1",
     "commander": "^13.1.0",
     "handlebars": "^4.7.8",
     "inquirer": "^12.6.1",
@@ -46,7 +45,7 @@
     "zod": "^3.24.4"
   },
   "devDependencies": {
-    "@types/chalk": "^2.2.0",
+    "@types/chalk": "^2.2.4",
     "@types/handlebars": "^4.0.40",
     "@types/inquirer": "^9.0.8",
     "@types/jest": "^29.5.14",

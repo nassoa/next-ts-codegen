@@ -3,7 +3,7 @@ import { parseJson } from '../../parsers/json-parser';
 import { generateTypes } from '../../generators/type-generator';
 import { generateHooks } from '../../generators/hook-generator';
 import chalk from 'chalk';
-import path from 'path';
+import * as path from 'path';
 
 export function createGenerateSourceCommand(program: Command) {
   return program
