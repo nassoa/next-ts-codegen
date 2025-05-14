@@ -11,6 +11,10 @@
     "next-ts-codegen": "./bin/next-ts-codegen.js"
   },
   "type": "commonjs",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
